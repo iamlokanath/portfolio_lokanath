@@ -12,7 +12,7 @@ function Experience() {
         </div>
         <TracingBeam className="px-6">
           <div className="max-w-2xl mx-auto antialiased pt-4 relative mt-5">
-            {experienceData.experiences.map((experience, index) => ( // Added 'index' as the second argument
+            {experienceData.experiences.map((experience, index) => (
               <div key={`experience-${index}`} className="mb-10"> {/* Added 'key' prop */}
                 <h2 className="text-blue-500 rounded-full text-sm w-fit mb-1">
                   {experience.company}
