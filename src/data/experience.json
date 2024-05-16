@@ -1,0 +1,32 @@
+{
+    "experiences" : [
+        {
+            "id": 1,
+            "role": "Full Stack Developer",
+            "description": "As the Team Lead of the Operations department, I oversee a multifaceted array of teams including Testing, DevOps, Defect Fixing, Database Management, and Digital Marketing. My role involves managing and coordinating the efforts of these diverse teams to ensure seamless operation and optimal performance. In addition to my managerial responsibilities, I am actively involved in AWS cloud as a Data Science and Analysis Engineer. This dual role allows me to leverage my expertise in cloud computing and data analysis to drive innovation and efficiency within our operations.",
+            "company": "Intelligent Cloud Applications",
+            "type": "Part-time",
+            "year":"Feb 2024 - Present · 4 mos"
+
+        },
+        {
+            "id": 2,
+            "role": "Data Science And Analysis Engineer",
+            "description": "As the Team Lead of the Operations department, I oversee a multifaceted array of teams including Testing, DevOps, Defect Fixing, Database Management, and Digital Marketing. My role involves managing and coordinating the efforts of these diverse teams to ensure seamless operation and optimal performance. In addition to my managerial responsibilities, I am actively involved in AWS cloud as a Data Science and Analysis Engineer. This dual role allows me to leverage my expertise in cloud computing and data analysis to drive innovation and efficiency within our operations.",
+            "company": "Intelligent Cloud Applications",
+            "type": "Part-time",
+            "year":"Nov 2022 - Jan 2024 · 1 yr, 7 mos"
+
+        },
+        {
+            "id": 3,
+            "role": "Full Stack Developer Intern",
+            "description": "Gained hands-on experience in UI/UX, React.js, Node.js web development, Serverless Framework, JavaScript, Figma, SST, GitHub, Bootstrap, Amazon Web Services, and CSS. Collaborated with a team of developers to design and develop web applications using React.js, ensuring optimal user experience and functionality.",
+            "company": "Bworkz",
+            "type": "Part-time",
+            "year": "July 2022 - Oct 2022 · 4 mos"
+        }
+        
+
+    ]
+}
