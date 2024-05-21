@@ -1,0 +1,147 @@
+{
+    "skills": [
+      {
+        "id": 1,
+        "title": "HTML",
+        
+        "isFeatured": true,
+        "image": "Image/html.png" 
+      },
+      {
+        "id": 2,
+        "title": "CSS",
+        
+        "isFeatured": true,
+        "image": "Image/css.png" 
+      },
+      {
+        "id": 3,
+        "title": "JS",
+        
+        "isFeatured": true,
+        "image": "Image/js.png" 
+      },
+      {
+        "id": 4,
+        "title": "React",
+        
+        "isFeatured": true,
+        "image": "Image/react.png"
+      },
+      {
+        "id": 5,
+        "title": "NextJs",
+        
+        "isFeatured": true,
+        "image": "Image/next.png"
+      },
+      {
+        "id": 6,
+        "title": "TS",
+        
+        "isFeatured": true,
+        "image": "Image/ts.png"
+      },
+      {
+        "id": 7,
+        "title": "node",
+       
+        "isFeatured": true,
+        "image": "Image/node.png"
+      },
+      {
+        "id": 8,
+        "title": "express",
+        
+        "isFeatured": true,
+        "image": "Image/ex.png"
+      },
+      {
+        "id": 9,
+        "title": "mongo",
+        
+        "isFeatured": true,
+        "image": "Image/mongo.png"
+      },
+      
+      {
+        "id": 10,
+        "title": "AWS",
+       
+        "isFeatured": true,
+        "image": "Image/aws.png"
+      },
+      {
+        "id": 11,
+        "title": "TailwindCSS",
+        
+        "isFeatured": true,
+        "image": "Image/tcss.png" 
+      },
+      {
+        "id": 12,
+        "title": "Figma",
+        
+        "isFeatured": true,
+        "image": "Image/figma.png" 
+      },
+      {
+        "id": 13,
+        "title": "Java",
+        
+        "isFeatured": true,
+        "image": "Image/java.png" 
+      },
+      {
+        "id": 14,
+        "title": "C++",
+        
+        "isFeatured": true,
+        "image": "Image/c++.png"
+      },
+      {
+        "id": 15,
+        "title": "Python",
+        
+        "isFeatured": true,
+        "image": "Image/python.png"
+      },
+      {
+        "id": 16,
+        "title": "C",
+        
+        "isFeatured": true,
+        "image": "Image/c.png"
+      },
+      {
+        "id": 17,
+        "title": "Bootstrap",
+       
+        "isFeatured": true,
+        "image": "Image/bs.png"
+      },
+      {
+        "id": 18,
+        "title": "Github",
+        
+        "isFeatured": true,
+        "image": "Image/git.png"
+      },
+      {
+        "id": 19,
+        "title": "SST",
+        
+        "isFeatured": true,
+        "image": "Image/sst.png"
+      },
+      
+      {
+        "id": 20,
+        "title": "VS Code",
+       
+        "isFeatured": true,
+        "image": "Image/code.png"
+      }
+    ]
+  }
+  
