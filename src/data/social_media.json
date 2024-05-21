@@ -1,0 +1,46 @@
+{
+    "socials": [
+        {
+            "id": 1,
+            "link": "https://www.linkedin.com/in/lokanath-panda-642193238/",
+            "name": "Linkedin",
+            "designation": "Lokanath Panda",
+            "image": "https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 2,
+            "link": "https://www.instagram.com/lokanathpanda7/",
+            "name": "Instagram",
+            "designation": "lokanathpanda7",
+            "image": "https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 3,
+            "link": "https://twitter.com/Lokanat48464605",
+            "name": "Twitter",
+            "designation": "Lokanat48464605",
+            "image": "https://images.unsplash.com/photo-1690233662564-f599cc764cca?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 4,
+            "link": "https://github.com/iamlokanath",
+            "name": "Github",
+            "designation": "iamlokanath",
+            "image": "https://images.unsplash.com/photo-1665392996886-0949d131a5da?q=80&w=1938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 5,
+            "link": "https://www.facebook.com/profile.php?id=100071480734923",
+            "name": "Facebook",
+            "designation": "Lokanath Panda/",
+            "image": "https://images.unsplash.com/photo-1627843563095-f6e94676cfe0?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 6,
+            "link": "https://api.whatsapp.com/send/?phone=9090272275&text=Hello+Lokanath,+I+want+to+connect+with+you&type=phone_number&app_absent=0",
+            "name": "Whatsapp",
+            "designation": "Lokanath",
+            "image": "https://images.unsplash.com/photo-1633354931133-27ac1ee5d853?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ]
+}
