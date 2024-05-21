@@ -9,7 +9,7 @@ const username: string = "Lokanath";
 interface Skills {
   id: number,
   title: string,
-  // image: 
+  image: string,
   isFeatured: boolean,
 }
 
