@@ -2,31 +2,12 @@
     "experiences" : [
         {
             "id": 1,
-            "role": "Full Stack Developer",
-            "description": "As the Team Lead of the Operations department, I oversee a multifaceted array of teams including Testing, DevOps, Defect Fixing, Database Management, and Digital Marketing. My role involves managing and coordinating the efforts of these diverse teams to ensure seamless operation and optimal performance. In addition to my managerial responsibilities, I am actively involved in AWS cloud as a Data Science and Analysis Engineer. This dual role allows me to leverage my expertise in cloud computing and data analysis to drive innovation and efficiency within our operations.",
-            "company": "Intelligent Cloud Applications",
-            "type": "Part-time",
-            "year":"Feb 2024 - Present · 4 mos"
-
-        },
-        {
-            "id": 2,
-            "role": "Data Science And Analysis Engineer",
-            "description": "As the Team Lead of the Operations department, I oversee a multifaceted array of teams including Testing, DevOps, Defect Fixing, Database Management, and Digital Marketing. My role involves managing and coordinating the efforts of these diverse teams to ensure seamless operation and optimal performance. In addition to my managerial responsibilities, I am actively involved in AWS cloud as a Data Science and Analysis Engineer. This dual role allows me to leverage my expertise in cloud computing and data analysis to drive innovation and efficiency within our operations.",
-            "company": "Intelligent Cloud Applications",
-            "type": "Part-time",
-            "year":"Nov 2022 - Jan 2024 · 1 yr, 7 mos"
-
-        },
-        {
-            "id": 3,
-            "role": "Full Stack Developer Intern",
-            "description": "Gained hands-on experience in UI/UX, React.js, Node.js web development, Serverless Framework, JavaScript, Figma, SST, GitHub, Bootstrap, Amazon Web Services, and CSS. Collaborated with a team of developers to design and develop web applications using React.js, ensuring optimal user experience and functionality.",
-            "company": "Bworkz",
-            "type": "Part-time",
-            "year": "July 2022 - Oct 2022 · 4 mos"
+            "role": "Software Developer Intern",
+            "description": "1. Developed a Code Generator and own CMS, reducing development time by 40% in React Js and Serverless.\n2. Engineered robust backend APIs in Serverless and Node.js for CRUD operations, Google Auth, and automated invoice generation with SMS/email reminders with seamless data retrieval from DynamoDB database, leading to a 25% reduction in frontend loading time and improved user experience.\n3. Successfully resolved website bugs, leading to notable improvements in web functionality and speed.\n4. Effectively managed database ensuring seamless integration and functionality.",
+            "company": "BWORKZ LLC",
+            "type": "Full-time",
+            "from": "2022-06-01",
+            "to": "Present"
         }
-        
-
     ]
 }

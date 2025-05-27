@@ -46,7 +46,7 @@ function HeroSection() {
 
         Feel free to connect with me to discuss about full stack web development and Data Science and Analysis. I look forward to connecting with you!</p>
         <div className="mt-4">
-            <Link href="Image/LokanathPanda.pdf" target='_blank'>
+            <Link href="Image/Lokanath_Panda_8144496407.pdf" target='_blank'>
             <Button
         borderRadius="1.75rem"
         className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
