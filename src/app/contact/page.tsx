@@ -20,7 +20,7 @@ function Page() {
           Contact Me
         </h1>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde qui culpa quod aperiam voluptatibus illo, architecto sequi repellendus saepe impedit, sed, explicabo similique adipisci rem minima. Impedit sunt quis animi.
+                   Feel free to connect with me to discuss more about my projects, experiences, and technologies. I look forward to connecting with you and would love to help you with your projects.
         </p>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <input
