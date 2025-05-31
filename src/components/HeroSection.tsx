@@ -1,62 +1,119 @@
+'use client';
+
 import React from 'react'
 import Link from 'next/link'
-import { Spotlight } from '@/components/ui/Spotlight'
+import { Spotlight } from './ui/Spotlight'
+import { Button } from "./ui/moving-border";
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/moving-border";
-
-import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 function HeroSection() {
-
-
   const words = [
     {
-      text: "Build",
+      text: "Transforming",
     },
     {
-      text: "awesome",
+      text: "Ideas",
     },
     {
-      text: "websites",
+      text: "Into",
     },
     {
-      text: "with",
+      text: "Digital",
     },
     {
-      text: "Lokanath.",
+      text: "Reality",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
 
-
   return (
-    <div className="h-auto md:h-[40rem] w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
-
-        <Spotlight
+    <div className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+      <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
-        />
+      />
 
-      <div className="p-4 relative z-10 w-full text-center mt-4">
-        <h1
-        className='mt-20 md:mt-0 text-4xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400'>Hello World! Welcome to my Portfolio</h1>
+      <div className="p-4 relative z-10 w-full text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-8"
+        >
+          {/* Greeting */}
+          <div className="space-y-2">
+            <h2 className="text-lg md:text-xl font-medium text-neutral-300">
+              Hello, I&apos;m
+            </h2>
+            <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+              Lokanath Panda
+            </h1>
+          </div>
 
-        <TypewriterEffectSmooth words={words} className='flex items-center  justify-center'/>
-        <p
-        className='mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto'>I am always seeking new opportunities to learn and grow, both personally and professionally. I believe in continuous improvement and staying up-to-date with the latest industry trends and technologies.
+          {/* Typewriter Effect */}
+          <div className="mt-4">
+            <TypewriterEffectSmooth words={words} className="flex items-center justify-center" />
+          </div>
 
-        Feel free to connect with me to discuss about full stack web development and Data Science and Analysis. I look forward to connecting with you!</p>
-        <div className="mt-4">
-            <Link href="Image/Lokanath_Panda_8144496407.pdf" target='_blank'>
-            <Button
-        borderRadius="1.75rem"
-        className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
-      >
-        Resume
-      </Button>
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-6 font-normal text-base md:text-lg text-neutral-300 max-w-2xl mx-auto leading-relaxed"
+          >
+            A passionate Full Stack Developer specializing in creating seamless digital experiences.
+            With expertise in Front-End, Back-End Development, DevOps, and Cloud Technologies,
+            I transform ideas into elegant solutions.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+          >
+            <Link href="Image/Lokanath_Panda_8144496407.pdf" target="_blank">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800 hover:scale-105 transition-transform duration-200"
+              >
+                View Resume
+              </Button>
             </Link>
-        </div>
+            <Link href="/projects">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-transparent text-white border border-white hover:bg-white hover:text-black transition-colors duration-200"
+              >
+                View Projects
+              </Button>
+            </Link>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex items-center justify-center gap-4 mt-8"
+          >
+            <Link href="https://github.com/iamlokanath" target="_blank" className="text-neutral-300 hover:text-white transition-colors duration-200">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+            </Link>
+            <Link href="https://www.linkedin.com/in/lokanath-panda-642193238/" target="_blank" className="text-neutral-300 hover:text-white transition-colors duration-200">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
-      </div>
+    </div>
   )
 }
 
