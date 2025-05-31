@@ -42,9 +42,9 @@ function HeroSection() {
 
         <TypewriterEffectSmooth words={words} className='flex items-center  justify-center'/>
         <p
-        className='mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto'>I am always seeking new opportunities to learn and grow, both personally and professionally. I believe in continuous improvement and staying up-to-date with the latest industry trends and technologies.
+        className='mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-xl mx-auto'>I am always seeking new opportunities to learn and grow, both personally and professionally. I believe in continuous improvement and staying up-to-date with the latest industry trends and technologies.
 
-        Feel free to connect with me to discuss about full stack web development and Data Science and Analysis. I look forward to connecting with you!</p>
+        I am a Full Stack Software Developer with expertise in Front-End, Back-End Development, DevOps, web scrapping, testing and Cloud Technologies. Feel free to connect with me to discuss about Software Development. I look forward to connecting with you!</p>
         <div className="mt-4">
             <Link href="Image/Lokanath_Panda_8144496407.pdf" target='_blank'>
             <Button
