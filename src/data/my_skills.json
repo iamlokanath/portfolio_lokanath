@@ -1,124 +1,168 @@
 {
   "skills": [
+    
     {
       "id": 1,
-      "title": "HTML",
+      "title": "JS",
       "isFeatured": true,
-      "image": "/Image/html.png"
+      "image": "/Image/js.png",
+      "category": "Frontend"
     },
     {
       "id": 2,
-      "title": "CSS",
+      "title": "TS",
       "isFeatured": true,
-      "image": "/Image/css.png"
+      "image": "/Image/ts.png",
+      "category": "Frontend"
     },
     {
       "id": 3,
-      "title": "JS",
+      "title": "React",
       "isFeatured": true,
-      "image": "/Image/js.png"
+      "image": "/Image/react.png",
+      "category": "Frontend"
     },
     {
       "id": 4,
-      "title": "React",
+      "title": "NextJs",
       "isFeatured": true,
-      "image": "/Image/react.png"
+      "image": "/Image/next.png",
+      "category": "Frontend"
     },
     {
       "id": 5,
-      "title": "NextJs",
+      "title": "TailwindCSS",
       "isFeatured": true,
-      "image": "/Image/next.png"
+      "image": "/Image/tcss.png",
+      "category": "Frontend"
     },
     {
       "id": 6,
-      "title": "TS",
+      "title": "Figma",
       "isFeatured": true,
-      "image": "/Image/ts.png"
+      "image": "/Image/figma.png",
+      "category": "Frontend"
     },
     {
       "id": 7,
-      "title": "node",
+      "title": "Redux",
       "isFeatured": true,
-      "image": "/Image/node.png"
+      "image": "/Image/Redux.png",
+      "category": "Frontend"
     },
     {
       "id": 8,
-      "title": "express",
+      "title": "HTML",
       "isFeatured": true,
-      "image": "/Image/ex.png"
+      "image": "/Image/html.png",
+      "category": "Frontend"
     },
     {
       "id": 9,
-      "title": "mongo",
+      "title": "CSS",
       "isFeatured": true,
-      "image": "/Image/mongo.png"
+      "image": "/Image/css.png",
+      "category": "Frontend"
     },
     {
       "id": 10,
-      "title": "AWS",
+      "title": "node",
       "isFeatured": true,
-      "image": "/Image/aws.png"
+      "image": "/Image/node.png",
+      "category": "Backend"
     },
     {
       "id": 11,
-      "title": "TailwindCSS",
+      "title": "express",
       "isFeatured": true,
-      "image": "/Image/tcss.png"
+      "image": "/Image/ex.png",
+      "category": "Backend"
     },
     {
       "id": 12,
-      "title": "Figma",
+      "title": "Serverless",
       "isFeatured": true,
-      "image": "/Image/figma.png"
+      "image": "/Image/Serverless.png",
+      "category": "Backend"
     },
     {
       "id": 13,
-      "title": "Java",
+      "title": "MongoDB",
       "isFeatured": true,
-      "image": "/Image/java.png"
+      "image": "/Image/mongo.png",
+      "category": "Database"
     },
     {
       "id": 14,
-      "title": "C++",
+      "title": "DynamoDB",
       "isFeatured": true,
-      "image": "/Image/c++.png"
+      "image": "/Image/DynamoDB.png",
+      "category": "Database"
     },
     {
       "id": 15,
-      "title": "Python",
+      "title": "AWS",
       "isFeatured": true,
-      "image": "/Image/python.png"
+      "image": "/Image/aws.png",
+      "category": "DevOps & Cloud"
     },
     {
       "id": 16,
-      "title": "C",
+      "title": "Github",
       "isFeatured": true,
-      "image": "/Image/c.png"
+      "image": "/Image/git.png",
+      "category": "DevOps & Cloud"
     },
     {
       "id": 17,
-      "title": "Bootstrap",
+      "title": "Docker",
       "isFeatured": true,
-      "image": "/Image/bs.png"
+      "image": "/Image/docker.png",
+      "category": "DevOps & Cloud"
     },
+   
     {
       "id": 18,
-      "title": "Github",
+      "title": "Java",
       "isFeatured": true,
-      "image": "/Image/git.png"
+      "image": "/Image/java.png",
+      "category": "Programming Language"
     },
     {
       "id": 19,
-      "title": "SST",
+      "title": "C++",
       "isFeatured": true,
-      "image": "/Image/sst.png"
+      "image": "/Image/c++.png",
+      "category": "Programming Language"
     },
     {
       "id": 20,
+      "title": "Python",
+      "isFeatured": true,
+      "image": "/Image/python.png",
+      "category": "Programming Language"
+    },
+    {
+      "id": 21,
+      "title": "C",
+      "isFeatured": true,
+      "image": "/Image/c.png",
+      "category": "Programming Language"
+    },
+    {
+      "id": 22,
       "title": "VS Code",
       "isFeatured": true,
-      "image": "/Image/code.png"
+      "image": "/Image/code.png",
+      "category": "Tools"
+    },
+    
+    {
+      "id": 23,
+      "title": "Postman",
+      "isFeatured": true,
+      "image": "/Image/postman.png",
+      "category": "Tools"
     }
   ]
 }
