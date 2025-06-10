@@ -27,8 +27,18 @@
             "isFeatured": true,
             "image": "/projects/navalncc.png"
         },
+        
         {
             "id": 4,
+            "title": "Smart Sell",
+            "link": "https://github.com/iamlokanath/SmartSell",
+            "slug": "smart-sell",
+            "description": "SmartSell is a full-stack web application designed to streamline the process of selling old smartphones. Powered by machine learning algorithms, the platform provides an accurate valuation of smartphones based on their condition and other key parameters.",
+            "isFeatured": true,
+            "image": "/projects/smartSell.png"
+        },
+        {
+            "id": 5,
             "title": "Lead Management System",
             "link": "https://github.com/iamlokanath/frontend-lead-management-system",
             "slug": "Lead Management System",
@@ -37,7 +47,16 @@
             "image": "/projects/lms.png"
         },
         {
-            "id": 5,
+            "id": 6,
+            "title": "Role Based Image Management System",
+            "link": "https://drive.google.com/file/d/1wcOf0VyaO9LmyKSa5jRiuCfQk-CGCz7T/view?usp=sharing",
+            "slug": "role-based-image-management-system",
+            "description": "Developed a full-stack role-based web application with three access levels: User, Admin, and Super Admin. Implemented functionality for uploading, viewing, and deleting images based on user roles. Added a Dark/Light mode toggle for enhanced user experience and built a responsive UI.",
+            "isFeatured": true,
+            "image": "/projects/IMS.png"
+        },
+        {
+            "id": 7,
             "title": "AWS Automation with Terraform & Python",
             "link": "https://github.com/iamlokanath/awsDevopsAssignment",
             "slug": "aws-automatio",
@@ -46,7 +65,7 @@
             "image": "/projects/awsAutomatio.png"
         },
         {
-            "id": 6,
+            "id": 8,
             "title": "GCEK Folio",
             "link": "https://www.figma.com/file/eUr7lrhTBSDF6bRqwwQW84/GcekFolio?type=design&mode=design&t=Tlo5C3ICIBofFFMF-0",
             "slug": "gcek-folio",
@@ -55,7 +74,7 @@
             "image": "/projects/gcekfolio.png"
         },
         {
-            "id": 7,
+            "id": 9,
             "title": "SAIS Redesign",
             "link": "https://www.figma.com/proto/ghaODgK2bOw3w9bHpiWEy5/SAIntellect-Solutions?page-id=0%3A1&node-id=8-240&viewport=289%2C288%2C0.08&t=UJ6zt3rfejji59Jo-1&scaling=min-zoom&content-scaling=fixed",
             "slug": "SAIS-redesign",
@@ -64,7 +83,7 @@
             "image": "/projects/SAIS.png"
         },
         {
-            "id": 8,
+            "id": 10,
             "title": "Cyber Fiesta",
             "link": "https://gceknavalncc.netlify.app/",
             "thumbnail": "/projects/farewell.png",
@@ -74,7 +93,7 @@
             "image": "/projects/cyberfiesta.png"
         },
         {
-            "id": 9,
+            "id": 11,
             "title": "Farewell",
             "link": "cse24farewell.netlify.app/",
             "thumbnail": "/projects/navalncc.png",
@@ -85,7 +104,7 @@
             
         },
         {
-            "id": 10,
+            "id": 12,
             "title": "Pacific Weather",
             "link": "https://pacific-weather.netlify.app/",
             "thumbnail": "/projects/weather.png",
@@ -96,7 +115,7 @@
         },
         
         {
-            "id": 11,
+            "id": 13,
             "title": "Romi finance",
             "link": "https://romifinanceassignment.netlify.app/",
             "slug": "romi finance",
@@ -105,7 +124,7 @@
             "image": "/projects/romi.png"
         },
         {
-            "id": 12,
+            "id": 14,
             "title": "Pacific Quotes",
             "link": "pacific-quotes.netlify.app",
             "thumbnail": "/projects/quotes.png",
