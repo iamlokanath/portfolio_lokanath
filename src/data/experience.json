@@ -2,12 +2,21 @@
     "experiences" : [
         {
             "id": 1,
+            "role": "Jr. Software Engineer Intern",
+            "description": "1. Developed a scalable Grievance Redressal Portal for the Government of Odisha using React, Node.js, MySQL, and Tailwind CSS, implementing role-based authentication (Admin/Nodal/User).\n2. Built secure RESTful APIs and responsive dashboards optimized for performance across multiple devices and user types.\n3. Created and integrated a CI/CD pipeline to automate build and deployment, enhancing delivery speed and reliability.\n4. Designed and delivered a responsive NGO portfolio website using Next.js, Tailwind CSS, and Framer Motion, ensuring cross-browser compatibility and optimal performance.",
+            "company": "HIREKARMA",
+            "type": "Internship",
+            "from": "2025-06-10",
+            "to": "Present"
+        },
+        {
+            "id": 2,
             "role": "Software Developer Intern",
             "description": "1. Developed a Code Generator and own CMS, reducing development time by 40% in React Js and Serverless.\n2. Engineered robust backend APIs in Serverless and Node.js for CRUD operations, Google Auth, and automated invoice generation with SMS/email reminders with seamless data retrieval from DynamoDB database, leading to a 25% reduction in frontend loading time and improved user experience.\n3. Successfully resolved website bugs, leading to notable improvements in web functionality and speed.\n4. Effectively managed database ensuring seamless integration and functionality.",
             "company": "BWORKZ LLC",
-            "type": "Full-time",
+            "type": "Internship",
             "from": "2022-06-01",
-            "to": "Present"
+            "to": "2025-05-15"
         }
     ]
 }
