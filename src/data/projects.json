@@ -1,25 +1,43 @@
 {
-  "projects": [
+  "projects": [  
     {
       "id": 1,
       "title": "Grievance Portal, Government of Odisha",
       "link": "https://mlagopalpur.org/",
       "slug": "Grievance Portal",
-      "description": "Built a scalable Grievance Redressal Portal for Government of Odisha using React, Node.js, MySQL, and Tailwind CSS.Developed secure APIs with role-based access (Admin/Nodal/User) and integrated authentication for multi-role access.Designed and deployed responsive dashboards optimizing performance across devices and user types.Collaborated in an agile team to deliver production-ready software under real-time constraints.Created the CICD pipeline for this project.",
+      "description": "Built a grievance redressal portal with role-based access, admin panel, and officer dashboards for the Government of Odisha using React, Node.js, MySQL, Hostinger and Tailwind CSS.",
       "isFeatured": true,
       "image": "/projects/grievancePortal.png"
     },
     {
       "id": 2,
+      "title": "AI Resume Builder",
+      "link": "https://resumebuilder.hirekarma.in/",
+      "slug": "AI Resume Builder",
+      "description": "Developed a full-stack Resume Builder Web Application using React.js, TypeScript, Node.js, and AWS, featuring real-time resume preview, downloadable PDFs, and customizable templates.",
+      "isFeatured": true,
+      "image": "/projects/resumeBuilder.png"
+    },
+    {
+      "id": 3,
+      "title": "Career Align",
+      "link": "https://hirekarma.online/student/career-align",
+      "slug": "career-align",
+      "description": "Created an AI agent to parse resumes and match skills with job listings using NLP, Python, AWS. And designed a dashboard to show skill gaps and recommend suitable roles.",
+      "isFeatured": true,
+      "image": "/projects/careerAlign.jpg"
+    },
+    {
+      "id": 4,
       "title": "NGO Portfolio Website",
       "link": "https://aariah.vercel.app/",
       "slug": "aariah-portfolio",
-      "description": "Designed and delivered a responsive NGO portfolio website using Next.js, Tailwind CSS, and Framer Motion, ensuring cross-browser compatibility and optimal performance. Collaborated with NGO stakeholders to gather requirements and ship user-centric, production-ready solutions. Developed with best mordern UI with a lot of animation practices, enhancing user experience and engagement.",
+      "description": "Designed and delivered a responsive NGO portfolio website using Next.js, Tailwind CSS, and Framer Motion, ensuring cross-browser compatibility and optimal performance.",
       "isFeatured": true,
       "image": "/projects/aariah.png"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Campaign Manager",
       "link": "https://frontend-cms-xi.vercel.app/",
       "slug": "Campaign Manager",
@@ -28,7 +46,7 @@
       "image": "/projects/cms.png"
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "Real-Time Crypto Price Tracker",
       "link": "https://github.com/iamlokanath/CryptoTracker",
       "slug": "Real-Time Crypto Price Tracker",
@@ -37,7 +55,7 @@
       "image": "/projects/cryptoTracker.jpeg"
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "Gcek Naval Ncc",
       "link": "https://gceknavalncc.netlify.app/",
       "slug": "gcek-naval-ncc",
@@ -46,7 +64,7 @@
       "image": "/projects/navalncc.png"
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "Smart Sell",
       "link": "https://github.com/iamlokanath/SmartSell",
       "slug": "smart-sell",
@@ -55,7 +73,7 @@
       "image": "/projects/smartSell.png"
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "Lead Management System",
       "link": "https://github.com/iamlokanath/frontend-lead-management-system",
       "slug": "Lead Management System",
@@ -64,7 +82,7 @@
       "image": "/projects/lms.png"
     },
     {
-      "id": 8,
+      "id": 10,
       "title": "Role Based Image Management System",
       "link": "https://drive.google.com/file/d/1wcOf0VyaO9LmyKSa5jRiuCfQk-CGCz7T/view?usp=sharing",
       "slug": "role-based-image-management-system",
@@ -73,7 +91,7 @@
       "image": "/projects/IMS.png"
     },
     {
-      "id": 9,
+      "id": 11,
       "title": "AWS Automation with Terraform & Python",
       "link": "https://github.com/iamlokanath/awsDevopsAssignment",
       "slug": "aws-automatio",
@@ -82,7 +100,7 @@
       "image": "/projects/awsAutomatio.png"
     },
     {
-      "id": 10,
+      "id": 12,
       "title": "GCEK Folio",
       "link": "https://www.figma.com/file/eUr7lrhTBSDF6bRqwwQW84/GcekFolio?type=design&mode=design&t=Tlo5C3ICIBofFFMF-0",
       "slug": "gcek-folio",
@@ -91,7 +109,7 @@
       "image": "/projects/gcekfolio.png"
     },
     {
-      "id": 11,
+      "id": 13,
       "title": "SAIS Redesign",
       "link": "https://www.figma.com/proto/ghaODgK2bOw3w9bHpiWEy5/SAIntellect-Solutions?page-id=0%3A1&node-id=8-240&viewport=289%2C288%2C0.08&t=UJ6zt3rfejji59Jo-1&scaling=min-zoom&content-scaling=fixed",
       "slug": "SAIS-redesign",
@@ -100,7 +118,7 @@
       "image": "/projects/SAIS.png"
     },
     {
-      "id": 12,
+      "id": 14,
       "title": "Cyber Fiesta",
       "link": "https://gceknavalncc.netlify.app/",
       "thumbnail": "/projects/farewell.png",
@@ -110,7 +128,7 @@
       "image": "/projects/cyberfiesta.png"
     },
     {
-      "id": 13,
+      "id": 15,
       "title": "Farewell",
       "link": "cse24farewell.netlify.app/",
       "thumbnail": "/projects/navalncc.png",
@@ -120,7 +138,7 @@
       "image": "/projects/farewell.png"
     },
     {
-      "id": 14,
+      "id": 16,
       "title": "Pacific Weather",
       "link": "https://pacific-weather.netlify.app/",
       "thumbnail": "/projects/weather.png",
@@ -130,7 +148,7 @@
       "image": "/projects/weather.png"
     },
     {
-      "id": 15,
+      "id": 17,
       "title": "Romi finance",
       "link": "https://romifinanceassignment.netlify.app/",
       "slug": "romi finance",
@@ -139,7 +157,7 @@
       "image": "/projects/romi.png"
     },
     {
-      "id": 16,
+      "id": 18,
       "title": "Pacific Quotes",
       "link": "pacific-quotes.netlify.app",
       "thumbnail": "/projects/quotes.png",
