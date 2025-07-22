@@ -2,10 +2,10 @@
     "experiences" : [
         {
             "id": 1,
-            "role": "Jr. Software Engineer Intern",
-            "description": "1. Developed a scalable Grievance Redressal Portal for the Government of Odisha using React, Node.js, MySQL, and Tailwind CSS, implementing role-based authentication (Admin/Nodal/User).\n2. Built secure RESTful APIs and responsive dashboards optimized for performance across multiple devices and user types.\n3. Created and integrated a CI/CD pipeline to automate build and deployment, enhancing delivery speed and reliability.\n4. Designed and delivered a responsive NGO portfolio website using Next.js, Tailwind CSS, and Framer Motion, ensuring cross-browser compatibility and optimal performance.",
+            "role": "Software Development Engineer 1",
+            "description": "1. Built a grievance redressal portal with role-based access, admin panel, and officer dashboards for the Government of Odisha using React, Node.js, MySQL, Hostinger and Tailwind CSS.\n2. Designed and delivered a responsive NGO portfolio website using Next.js, Tailwind CSS, and Framer Motion, ensuring cross-browser compatibility and optimal performance.\n3. Created an AI agent to parse resumes and match skills with job listings using NLP, Python, AWS. And designed a dashboard to show skill gaps and recommend suitable roles.\n 4. Developed a full-stack Resume Builder Web Application using React.js, TypeScript, Node.js, and AWS, featuring real-time resume preview, downloadable PDFs, and customizable templates.\n 5. Ensured scalable, secure, and user-friendly interfaces across all projects.",
             "company": "HIREKARMA",
-            "type": "Internship",
+            "type": "Full-time",
             "from": "2025-06-10",
             "to": "Present"
         },
