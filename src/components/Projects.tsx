@@ -3,12 +3,13 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 import projectData from '@/data/projects.json';
 
 function Projects() {
-  // Map projects.json to the format expected by HeroParallax
-  const products = projectData.projects.map((project: any) => ({
-    title: project.title,
-    link: project.link,
-    thumbnail: project.image // use 'image' as 'thumbnail'
-  }));
+  const products = projectData.projects
+    .filter((project: { image?: string }) => Boolean(project.image))
+    .map((project: { title: string; link: string; image: string }) => ({
+      title: project.title,
+      link: project.link || "#",
+      thumbnail: project.image,
+    }));
 
   return (
     <div>
