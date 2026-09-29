@@ -21,7 +21,7 @@ export default function ChatInput({
 }: ChatInputProps) {
   return (
     <form
-      className="border-t border-white/10 p-3 space-y-2 shrink-0"
+      className="shrink-0 space-y-2 border-t border-white/[0.08] bg-[#070b14]/80 p-3"
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit();
@@ -46,8 +46,8 @@ export default function ChatInput({
             maxLength={6000}
             rows={4}
             className={cn(
-              "flex-1 rounded-xl bg-black/40 border border-white/10 px-3 py-2 text-sm text-white resize-y min-h-[80px] max-h-[160px]",
-              "placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40",
+              "flex-1 rounded-2xl bg-[#0c1526] border border-white/10 px-3 py-2 text-sm text-slate-100 resize-y min-h-[80px] max-h-[160px]",
+              "placeholder:text-slate-500 focus:outline-none focus:border-violet-400/50",
               "disabled:opacity-50"
             )}
             onKeyDown={(e) => {
@@ -67,8 +67,8 @@ export default function ChatInput({
             maxLength={6000}
             autoComplete="off"
             className={cn(
-              "flex-1 rounded-xl bg-black/40 border border-white/10 px-3 py-2 text-sm text-white",
-              "placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40",
+              "h-11 flex-1 rounded-full bg-[#0c1526] border border-white/10 px-4 text-sm text-slate-100",
+              "placeholder:text-slate-500 focus:outline-none focus:border-violet-400/50",
               "disabled:opacity-50"
             )}
           />
@@ -77,16 +77,16 @@ export default function ChatInput({
           type="submit"
           disabled={disabled || !value.trim()}
           className={cn(
-            "rounded-xl px-4 py-2 text-sm font-medium text-white shrink-0",
-            "bg-gradient-to-r from-blue-600 to-purple-600 border border-white/10",
+            "h-11 rounded-full px-5 text-sm font-medium text-white shrink-0",
+            "bg-gradient-to-r from-[#8b5cf6] to-[#3b82f6] shadow-[0_0_20px_rgba(139,92,246,0.35)]",
             "disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
           )}
         >
           Send
         </button>
       </div>
-      <p className="text-[10px] text-zinc-500 text-center">
+      <p className="text-center text-[10px] text-slate-500">
         Answers are grounded in Lokanath&apos;s real resume and project data.
       </p>
     </form>

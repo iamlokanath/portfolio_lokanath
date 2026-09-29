@@ -1,14 +1,33 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import SiteHeader from "@/components/layout/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter";
 import AskLpWidget from "@/components/ask-lp/AskLpWidget";
+import SmoothScroll from "@/components/layout/SmoothScroll";
+import site from "@/data/content/site.json";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const script = Caveat({
+  subsets: ["latin"],
+  variable: "--font-script",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Lokanath Panda",
-  description: "The Portfolio website of Lokanath Panda",
+  title: site.brand.title,
+  description: site.brand.description,
 };
 
 export default function RootLayout({
@@ -18,11 +37,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
-        <div className="relative w-full flex items-center justify-center ">
-          <Navbar />
+      <body
+        className={`${sans.variable} ${mono.variable} ${script.variable} font-sans antialiased bg-[#030712]`}
+      >
+        <SmoothScroll />
+        <div aria-hidden className="site-grid pointer-events-none fixed inset-0 z-0" />
+        <div className="relative z-10">
+          <SiteHeader />
+          {children}
+          <SiteFooter />
         </div>
-        {children}
         <AskLpWidget />
       </body>
     </html>

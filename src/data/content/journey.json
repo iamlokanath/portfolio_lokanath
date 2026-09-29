@@ -1,0 +1,20 @@
+{
+  "eyebrow": "MY PROFESSIONAL JOURNEY",
+  "heading": "Experience that ships",
+  "viewAll": {
+    "label": "View Full Experience",
+    "href": "/experience"
+  },
+  "statusLabels": {
+    "current": "Current",
+    "previous": "Previous"
+  },
+  "highlightsTitle": "KEY HIGHLIGHTS",
+  "highlights": [
+    "Shipping production AI & full-stack platforms",
+    "Government and campus hiring systems delivered",
+    "IDP / LLM work in logistics & supply chain",
+    "End-to-end ownership: UI → API → cloud"
+  ],
+  "maxRolesOnHome": 2
+}

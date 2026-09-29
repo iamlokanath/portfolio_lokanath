@@ -1,0 +1,20 @@
+{
+  "eyebrow": "ABOUT ME",
+  "heading": "I'm Lokanath Panda",
+  "body": "Full-stack engineer focused on shipping reliable products — from campus hiring platforms and AI placement tools to logistics document intelligence. I care about clean architecture, measurable outcomes, and systems that stay maintainable in production.",
+  "cta": {
+    "label": "More About Me",
+    "href": "/experience"
+  },
+  "facts": [
+    { "id": "location", "label": "Location", "value": "Bhubaneswar, Odisha", "icon": "map-pin" },
+    { "id": "education", "label": "Education", "value": "B.Tech CSE, GCEK", "icon": "graduation-cap" },
+    { "id": "experience", "label": "Experience", "value": "1.5+ Years", "icon": "briefcase" },
+    { "id": "role", "label": "Current Role", "value": "Officer - Python @ Cozentus", "icon": "badge-check" },
+    { "id": "email", "label": "Email", "valueEnvKey": "NEXT_PUBLIC_CONTACT_EMAIL", "valueFallback": "lokanathpanda128@gmail.com", "icon": "mail" }
+  ],
+  "quote": {
+    "text": "Build systems that are simple to operate, honest about trade-offs, and useful to the people who depend on them.",
+    "attribution": "Lokanath Panda"
+  }
+}

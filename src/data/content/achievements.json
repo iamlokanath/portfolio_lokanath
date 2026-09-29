@@ -1,0 +1,18 @@
+{
+  "eyebrow": "ACHIEVEMENTS & GITHUB",
+  "heading": "Numbers that tell a story.",
+  "stats": [
+    { "id": "github", "value": "4K+", "label": "GitHub Contributions", "icon": "github" },
+    { "id": "jira", "value": "100+", "label": "Jira Tickets Resolved", "icon": "check-square" },
+    { "id": "projects", "value": "10+", "label": "Major Production Projects", "icon": "folder-kanban" },
+    { "id": "users", "value": "5000+", "label": "Daily Users Across Apps", "icon": "users" },
+    { "id": "rank", "value": "Top 50%", "label": "GitHub Profile", "icon": "star" }
+  ],
+  "githubCard": {
+    "title": "Check out my GitHub",
+    "subtitle": "Contributions, projects and more.",
+    "handle": "github.com/iamlokanath",
+    "hrefEnvKey": "NEXT_PUBLIC_GITHUB_URL",
+    "fallback": "https://github.com/iamlokanath"
+  }
+}
