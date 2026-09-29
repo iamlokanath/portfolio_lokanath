@@ -1,0 +1,59 @@
+{
+  "badge": "Full Stack Engineer",
+  "greeting": "Hi, I'm",
+  "name": "Lokanath Panda",
+  "bio": "I build scalable web applications and AI-powered solutions that turn complex problems into clean, production-ready products.",
+  "primaryCta": {
+    "label": "View My Work",
+    "href": "/projects"
+  },
+  "secondaryCta": {
+    "label": "Contact Me",
+    "href": "/contact"
+  },
+  "socials": [
+    { "id": "github", "label": "GitHub", "hrefEnvKey": "NEXT_PUBLIC_GITHUB_URL", "fallback": "https://github.com/iamlokanath", "icon": "github" },
+    { "id": "linkedin", "label": "LinkedIn", "hrefEnvKey": "NEXT_PUBLIC_LINKEDIN_URL", "fallback": "https://www.linkedin.com/in/lokanath-panda-642193238/", "icon": "linkedin" },
+    { "id": "twitter", "label": "X", "hrefEnvKey": "NEXT_PUBLIC_TWITTER_URL", "fallback": "https://twitter.com/Lokanat48464605", "icon": "twitter" },
+    { "id": "email", "label": "Email", "hrefEnvKey": "NEXT_PUBLIC_CONTACT_EMAIL", "fallback": "mailto:lokanathpanda128@gmail.com", "icon": "mail", "isEmail": true }
+  ],
+  "codeWindow": {
+    "filename": "engineer.ts",
+    "annotation": "Build Ship Iterate",
+    "lines": [
+      [
+        { "type": "keyword", "text": "const" },
+        { "type": "plain", "text": " engineer = {" }
+      ],
+      [
+        { "type": "indent", "text": "  " },
+        { "type": "key", "text": "role" },
+        { "type": "plain", "text": ": " },
+        { "type": "string", "text": "\"Full Stack Engineer\"" },
+        { "type": "plain", "text": "," }
+      ],
+      [
+        { "type": "indent", "text": "  " },
+        { "type": "key", "text": "focus" },
+        { "type": "plain", "text": ": " },
+        { "type": "string", "text": "\"Web Apps + AI + Cloud\"" },
+        { "type": "plain", "text": "," }
+      ],
+      [
+        { "type": "indent", "text": "  " },
+        { "type": "key", "text": "location" },
+        { "type": "plain", "text": ": " },
+        { "type": "string", "text": "\"Bhubaneswar, Odisha\"" },
+        { "type": "plain", "text": "," }
+      ],
+      [
+        { "type": "indent", "text": "  " },
+        { "type": "key", "text": "mindset" },
+        { "type": "plain", "text": ": " },
+        { "type": "string", "text": "\"Ship reliable systems\"" },
+        { "type": "plain", "text": "," }
+      ],
+      [{ "type": "plain", "text": "};" }]
+    ]
+  }
+}

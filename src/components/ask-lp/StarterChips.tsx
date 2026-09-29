@@ -19,7 +19,7 @@ type StarterChipsProps = {
 
 export default function StarterChips({ onSelect, disabled }: StarterChipsProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col gap-2">
       {STARTER_CHIPS.map((chip) => (
         <button
           key={chip.id}
@@ -29,10 +29,9 @@ export default function StarterChips({ onSelect, disabled }: StarterChipsProps) 
             onSelect(chip.prompt, { jdMode: "jdMode" in chip && chip.jdMode === true })
           }
           className={cn(
-            "text-left text-xs rounded-lg px-2.5 py-1.5",
-            "bg-white/5 border border-white/10 text-zinc-300",
-            "hover:bg-white/10 hover:border-white/20 transition-colors",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400",
+            "w-full rounded-full border border-white/10 bg-[#0b1220]/80 px-3.5 py-2 text-left text-xs text-slate-200",
+            "transition-colors hover:border-violet-400/40 hover:bg-violet-500/10",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400",
             "disabled:opacity-50"
           )}
         >

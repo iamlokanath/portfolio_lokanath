@@ -1,0 +1,26 @@
+{
+  "eyebrow": "GET IN TOUCH",
+  "heading": "Let's build something useful.",
+  "body": "Have a project idea, a job opportunity, or just want to connect? Feel free to reach out — I'd love to hear from you.",
+  "emailLabel": "Email",
+  "emailEnvKey": "NEXT_PUBLIC_CONTACT_EMAIL",
+  "emailFallback": "lokanathpanda128@gmail.com",
+  "locationLabel": "Location",
+  "location": "Bhubaneswar, Odisha, India",
+  "form": {
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your Email",
+    "phonePlaceholder": "Phone Number",
+    "subjectPlaceholder": "Subject",
+    "subjects": ["Project idea", "Job opportunity", "Just saying hello"],
+    "messagePlaceholder": "Your Message",
+    "submitLabel": "Send Message",
+    "mailtoSubjectPrefix": "Portfolio contact"
+  },
+  "socials": [
+    { "id": "github", "label": "GitHub", "icon": "github", "hrefEnvKey": "NEXT_PUBLIC_GITHUB_URL", "fallback": "https://github.com/iamlokanath" },
+    { "id": "linkedin", "label": "LinkedIn", "icon": "linkedin", "hrefEnvKey": "NEXT_PUBLIC_LINKEDIN_URL", "fallback": "https://www.linkedin.com/in/lokanath-panda-642193238/" },
+    { "id": "twitter", "label": "X", "icon": "twitter", "hrefEnvKey": "NEXT_PUBLIC_TWITTER_URL", "fallback": "https://twitter.com/Lokanat48464605" },
+    { "id": "email", "label": "Email", "icon": "mail", "hrefEnvKey": "NEXT_PUBLIC_CONTACT_EMAIL", "fallback": "mailto:lokanathpanda128@gmail.com", "isEmail": true }
+  ]
+}

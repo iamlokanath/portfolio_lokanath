@@ -18,12 +18,12 @@ export default function ContactCtaRow({ onTrack }: ContactCtaRowProps) {
   ];
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 space-y-2">
-      <p className="text-xs text-zinc-300 font-medium">
+    <div className="space-y-2 rounded-2xl border border-white/[0.08] bg-[#0b1220] p-3">
+      <p className="text-xs font-medium text-slate-200">
         Interested in discussing an opportunity?
       </p>
       <div className="flex flex-wrap gap-2">
-        {links.map((link) => (
+        {links.map((link, index) => (
           <a
             key={link.id}
             href={link.href}
@@ -32,10 +32,11 @@ export default function ContactCtaRow({ onTrack }: ContactCtaRowProps) {
             download={link.id === "resume" ? true : undefined}
             onClick={() => onTrack?.(link.id)}
             className={cn(
-              "text-[11px] rounded-lg px-2.5 py-1.5",
-              "bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white",
-              "border border-white/10 hover:opacity-95 transition-opacity",
-              "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+              "rounded-full px-3 py-1.5 text-[11px] transition-opacity hover:opacity-95",
+              "focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400",
+              index === 0
+                ? "bg-gradient-to-r from-[#8b5cf6] to-[#3b82f6] text-white"
+                : "border border-white/15 bg-white/[0.03] text-slate-200"
             )}
           >
             {link.label}
