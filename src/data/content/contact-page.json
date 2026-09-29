@@ -1,0 +1,10 @@
+{
+  "eyebrow": "CONTACT",
+  "heading": "Contact Me",
+  "body": "Feel free to connect to discuss projects, experience, and collaborations.",
+  "emailPlaceholder": "Your email address",
+  "messagePlaceholder": "Your message",
+  "submitLabel": "Send Message",
+  "successLabel": "Opening your email client…",
+  "mailtoSubject": "Portfolio contact"
+}

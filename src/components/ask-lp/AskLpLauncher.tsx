@@ -40,20 +40,14 @@ export default function AskLpLauncher() {
           className={cn(
             "fixed z-[60] flex items-center gap-2 rounded-full px-4 py-3",
             "bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))]",
-            "bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium",
-            "shadow-lg shadow-black/40 border border-white/20 backdrop-blur-md",
+            "bg-gradient-to-r from-[#8b5cf6] via-[#6366f1] to-[#3b82f6] text-white text-sm font-medium",
+            "shadow-[0_0_28px_rgba(139,92,246,0.45)] border border-white/15",
             "hover:opacity-95 transition-opacity",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030712]"
           )}
           whileHover={reduceMotion ? undefined : { scale: 1.02 }}
           whileTap={reduceMotion ? undefined : { scale: 0.98 }}
         >
-          <span className="relative flex h-2 w-2" aria-hidden>
-            {!reduceMotion ? (
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/70 opacity-60" />
-            ) : null}
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-          </span>
           ✦ Ask LP
         </motion.button>
       )}

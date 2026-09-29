@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "web",
+      "title": "Web",
+      "icon": "code",
+      "accent": "blue",
+      "description": "Modern & responsive UI",
+      "lines": ["React", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "id": "backend",
+      "title": "Backend & APIs",
+      "icon": "server",
+      "accent": "purple",
+      "description": "Scalable services & integrations",
+      "lines": ["FastAPI", "Python", "Node.js"]
+    },
+    {
+      "id": "ai",
+      "title": "AI",
+      "icon": "brain",
+      "accent": "pink",
+      "description": "AI-powered solutions",
+      "lines": ["LLM", "Cohere", "OpenAI"]
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud",
+      "icon": "cloud",
+      "accent": "indigo",
+      "description": "Reliable & scalable deployments",
+      "lines": ["AWS", "Docker", "CI/CD"]
+    }
+  ]
+}

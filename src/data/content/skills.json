@@ -1,0 +1,46 @@
+{
+  "eyebrow": "SKILLS & TECHNOLOGIES",
+  "heading": "Tools I use to bring ideas to life.",
+  "viewAll": {
+    "label": "View All Skills",
+    "href": "/skills"
+  },
+  "categories": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "icon": "code",
+      "lines": ["React, Next.js, TypeScript", "Tailwind CSS, JavaScript"]
+    },
+    {
+      "id": "backend",
+      "title": "Backend & APIs",
+      "icon": "server",
+      "lines": ["Python, FastAPI, Node.js", "Express, REST APIs"]
+    },
+    {
+      "id": "database",
+      "title": "Database",
+      "icon": "database",
+      "lines": ["PostgreSQL, MongoDB", "DynamoDB, MySQL"]
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud / DevOps",
+      "icon": "cloud",
+      "lines": ["AWS, Docker, GitHub Actions", "CI/CD, Terraform"]
+    },
+    {
+      "id": "ai",
+      "title": "AI / ML",
+      "icon": "sparkles",
+      "lines": ["Cohere, OpenAI, LLMs", "RAG, LangChain"]
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "icon": "wrench",
+      "lines": ["Git, Linux, VS Code", "Postman, Figma"]
+    }
+  ]
+}

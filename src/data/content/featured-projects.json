@@ -1,0 +1,38 @@
+{
+  "eyebrow": "FEATURED PROJECTS",
+  "heading": "Real products. Real impact.",
+  "viewAll": {
+    "label": "View All Projects",
+    "href": "/projects"
+  },
+  "cards": [
+    {
+      "id": 2,
+      "title": "DISHA Job Portal",
+      "summary": "Campus hiring platform for students and colleges. Resume builder, analytics, bulk upload and more.",
+      "stack": ["Next.js", "FastAPI", "PostgreSQL"],
+      "tone": "violet"
+    },
+    {
+      "id": 1,
+      "title": "SOLVIQAI",
+      "summary": "AI placement simulator with multi-round assessments and proctoring.",
+      "stack": ["Python", "FastAPI", "Next.js"],
+      "tone": "blue"
+    },
+    {
+      "id": 4,
+      "title": "Jan Samadhan",
+      "summary": "Citizen grievance platform for filing complaints, tracking cases, and online hearings.",
+      "stack": [],
+      "tone": "indigo"
+    },
+    {
+      "id": 3,
+      "title": "AMA Gopalpur",
+      "summary": "Constituency platform for public information, development work, and citizen services.",
+      "stack": [],
+      "tone": "emerald"
+    }
+  ]
+}

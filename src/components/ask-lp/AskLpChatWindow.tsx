@@ -250,10 +250,11 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
               reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 320, damping: 28 }
             }
             className={cn(
-              "fixed z-[60] flex flex-col overflow-hidden rounded-2xl border border-white/15",
-              "bg-zinc-950/95 backdrop-blur-xl shadow-2xl shadow-black/50",
-              "bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] left-[max(1.25rem,env(safe-area-inset-left))]",
-              "h-[min(640px,calc(100dvh-5.5rem))] sm:left-auto sm:w-[420px]",
+              "fixed z-[60] flex flex-col overflow-hidden rounded-2xl",
+              "border border-white/[0.1] bg-[#070b14]/95 backdrop-blur-2xl",
+              "shadow-[0_24px_80px_rgba(0,0,0,0.55),0_0_40px_rgba(139,92,246,0.18)]",
+              "bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] left-[max(1rem,env(safe-area-inset-left))]",
+              "h-[min(680px,calc(100dvh-5rem))] sm:left-auto sm:w-[400px]",
               "md:bottom-24 md:right-5 md:left-auto"
             )}
           >
@@ -261,17 +262,19 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
 
             <div
               ref={listRef}
-              className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 space-y-3 min-h-0"
+              className="chat-scroll flex-1 overflow-y-auto overscroll-contain px-4 py-3 space-y-3 min-h-0"
               aria-live="polite"
               aria-relevant="additions"
             >
               {messages.length === 0 ? (
                 <div className="space-y-3">
-                  <p className="text-sm text-zinc-300 leading-relaxed">
-                    Hi, I&apos;m Loka&apos;s AI assistant. I can help you quickly understand his
+                  <p className="text-sm text-slate-200 leading-relaxed">
+                    Hi, I&apos;m Lokanath&apos;s AI assistant. I can help you quickly understand his
                     experience, technical strengths, projects, and fit for your role.
                   </p>
-                  <p className="text-xs text-zinc-500">Try asking:</p>
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-sky-400">
+                    Try asking
+                  </p>
                   <StarterChips onSelect={onStarter} disabled={sending} />
                 </div>
               ) : null}
@@ -289,13 +292,13 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
 
               {sending && messages[messages.length - 1]?.content === "" ? (
                 <div
-                  className="mr-auto rounded-xl px-3 py-2 text-sm text-zinc-500 border border-white/10 bg-white/5 flex items-center gap-2"
+                  className="mr-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#0b1220] px-3 py-2 text-sm text-slate-400"
                   aria-label="Assistant is typing"
                 >
                   <span className="flex gap-1">
-                    <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 animate-bounce [animation-delay:0ms]" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 animate-bounce [animation-delay:150ms]" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 animate-bounce [animation-delay:300ms]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-bounce [animation-delay:0ms]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-bounce [animation-delay:150ms]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-sky-300 animate-bounce [animation-delay:300ms]" />
                   </span>
                   Thinking…
                 </div>
@@ -312,14 +315,14 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
                 <div className="flex flex-wrap gap-2">
                   <a
                     href="/projects"
-                    className="text-[11px] rounded-lg px-2.5 py-1.5 bg-white/5 border border-white/10 text-zinc-200 hover:bg-white/10"
+                    className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1.5 text-[11px] text-slate-200 hover:border-sky-400/40"
                   >
                     Explore Projects
                   </a>
                   <a
                     href={profileKnowledge.identity.resumeUrl}
                     download
-                    className="text-[11px] rounded-lg px-2.5 py-1.5 bg-white/5 border border-white/10 text-zinc-200 hover:bg-white/10"
+                    className="rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#3b82f6] px-3 py-1.5 text-[11px] text-white hover:opacity-95"
                   >
                     Download Resume
                   </a>

@@ -63,10 +63,10 @@ function List({ title, items }: { title: string; items: string[] }) {
   if (!items.length) return null;
   return (
     <div>
-      <p className="text-[11px] font-medium text-zinc-400 mb-1">{title}</p>
+      <p className="text-[11px] font-medium text-slate-400 mb-1">{title}</p>
       <ul className="space-y-1">
         {items.map((item) => (
-          <li key={item} className="text-xs text-zinc-300 leading-snug pl-3 relative before:content-['•'] before:absolute before:left-0 before:text-zinc-500">
+          <li key={item} className="text-xs text-slate-300 leading-snug pl-3 relative before:content-['•'] before:absolute before:left-0 before:text-sky-400">
             {item}
           </li>
         ))}
@@ -79,8 +79,7 @@ export default function JdMatchCard({ data }: JdMatchCardProps) {
   return (
     <div
       className={cn(
-        "mt-3 rounded-xl border border-white/10 bg-black/30 p-3 space-y-3",
-        "ring-1 ring-white/5"
+        "mt-3 rounded-2xl border border-white/[0.08] bg-[#0b1220] p-3 space-y-3"
       )}
       role="region"
       aria-label="Match summary"
@@ -100,8 +99,8 @@ export default function JdMatchCard({ data }: JdMatchCardProps) {
       <List title="Partial matches" items={data.partial} />
       <List title="Gaps" items={data.gaps} />
       {data.nextStep ? (
-        <p className="text-xs text-zinc-400 border-t border-white/10 pt-2">
-          <span className="text-zinc-300 font-medium">Next step: </span>
+        <p className="text-xs text-slate-400 border-t border-white/10 pt-2">
+          <span className="text-slate-200 font-medium">Next step: </span>
           {data.nextStep}
         </p>
       ) : null}

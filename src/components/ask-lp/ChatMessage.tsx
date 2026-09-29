@@ -51,16 +51,16 @@ export default function ChatMessage({ message, onFollowUp }: ChatMessageProps) {
     <div className={cn("flex flex-col gap-1", isUser ? "items-end" : "items-start")}>
       <div
         className={cn(
-          "max-w-[92%] rounded-xl px-3 py-2 text-sm leading-relaxed",
+          "max-w-[92%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
           isUser
-            ? "bg-blue-600/25 text-zinc-100 border border-blue-500/30"
-            : "bg-white/5 text-zinc-200 border border-white/10"
+            ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white shadow-[0_8px_24px_rgba(139,92,246,0.25)]"
+            : "border border-white/[0.08] bg-[#0b1220] text-slate-200"
         )}
       >
         {isUser ? (
           <p className="whitespace-pre-wrap">{display}</p>
         ) : (
-          <div className="ask-lp-md text-sm text-zinc-200 [&_p]:my-1.5 [&_ul]:my-1.5 [&_ul]:list-disc [&_ul]:pl-4 [&_ol]:list-decimal [&_ol]:pl-4 [&_li]:my-0.5 [&_strong]:text-zinc-100 [&_a]:text-blue-400 [&_a]:underline-offset-2 hover:[&_a]:underline [&_h1]:text-base [&_h2]:text-sm [&_h3]:text-sm [&_h1]:font-semibold [&_h2]:font-semibold [&_h3]:font-semibold">
+          <div className="ask-lp-md text-sm text-slate-200 [&_p]:my-1.5 [&_ul]:my-1.5 [&_ul]:list-disc [&_ul]:pl-4 [&_ol]:list-decimal [&_ol]:pl-4 [&_li]:my-0.5 [&_strong]:text-white [&_a]:text-sky-300 [&_a]:underline-offset-2 hover:[&_a]:underline [&_h1]:text-base [&_h2]:text-sm [&_h3]:text-sm [&_h1]:font-semibold [&_h2]:font-semibold [&_h3]:font-semibold">
             <ReactMarkdown
               components={{
                 a: ({ href, children }) => (
@@ -75,7 +75,7 @@ export default function ChatMessage({ message, onFollowUp }: ChatMessageProps) {
           </div>
         )}
         {message.streaming ? (
-          <span className="inline-block mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400 animate-pulse" aria-hidden />
+          <span className="inline-block mt-1 h-1.5 w-1.5 rounded-full bg-violet-300 animate-pulse" aria-hidden />
         ) : null}
       </div>
 
@@ -101,10 +101,10 @@ export default function ChatMessage({ message, onFollowUp }: ChatMessageProps) {
               type="button"
               onClick={() => onFollowUp?.(q)}
               className={cn(
-                "text-left text-[11px] rounded-lg px-2.5 py-1.5",
-                "bg-white/5 border border-white/10 text-zinc-400",
-                "hover:bg-white/10 hover:text-zinc-200 transition-colors",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                "text-left text-[11px] rounded-full px-3 py-1.5",
+                "border border-white/10 bg-white/[0.03] text-slate-400",
+                "hover:border-sky-400/40 hover:text-slate-100 transition-colors",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
               )}
             >
               {q}

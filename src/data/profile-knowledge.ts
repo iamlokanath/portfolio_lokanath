@@ -9,7 +9,7 @@
  * Keep ONLY things not represented there in `profileExtras` below
  * (identity, summary, education, strengths, AI skill notes, guardrails).
  */
-
+  
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
 import skillsData from "@/data/my_skills.json";
