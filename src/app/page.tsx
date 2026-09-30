@@ -4,13 +4,14 @@ import JourneySection from "@/components/sections/JourneySection";
 import FeaturedProjectsSection from "@/components/sections/FeaturedProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import AchievementsSection from "@/components/sections/AchievementsSection";
+import GitHubAnalyticsSection from "@/components/sections/GitHubAnalyticsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import NameHoverSection from "@/components/sections/NameHoverSection";
 import { GlowArc } from "@/components/shared/GlowArc";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-site">
+    <main className="relative min-h-screen max-w-full overflow-x-clip bg-site">
       <GlowArc className="-left-16 top-4 z-0 sm:-left-20 sm:top-2" />
       <HeroSection />
       <AboutSection />
@@ -18,6 +19,7 @@ export default function Home() {
       <FeaturedProjectsSection />
       <SkillsSection />
       <AchievementsSection />
+      <GitHubAnalyticsSection />
       <ContactSection />
       <NameHoverSection />
     </main>

@@ -64,7 +64,7 @@ export default function SiteHeader() {
         scrolled ? "py-3" : "py-4"
       )}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-7xl min-w-0 px-4 sm:px-6">
         <div
           className={cn(
             "flex items-center justify-between gap-2 rounded-full px-3 sm:px-5 py-2",

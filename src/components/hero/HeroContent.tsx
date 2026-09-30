@@ -34,7 +34,7 @@ export function HeroContentBlock({ data }: HeroContentProps) {
         </span>
       </h1>
 
-      <p className="mt-4 max-w-[34rem] text-[15px] sm:text-base text-slate-400 leading-relaxed">
+      <p className="mt-4 max-w-full text-[15px] leading-relaxed text-slate-400 sm:max-w-[34rem] sm:text-base">
         {data.bio}
       </p>
 
