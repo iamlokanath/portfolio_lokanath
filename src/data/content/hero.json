@@ -18,42 +18,39 @@
     { "id": "email", "label": "Email", "hrefEnvKey": "NEXT_PUBLIC_CONTACT_EMAIL", "fallback": "mailto:lokanathpanda128@gmail.com", "icon": "mail", "isEmail": true }
   ],
   "codeWindow": {
-    "filename": "engineer.ts",
+    "filename": "engineer.py",
     "annotation": "Build Ship Iterate",
     "lines": [
+      [{ "type": "plain", "text": "engineer = {" }],
       [
-        { "type": "keyword", "text": "const" },
-        { "type": "plain", "text": " engineer = {" }
-      ],
-      [
-        { "type": "indent", "text": "  " },
-        { "type": "key", "text": "role" },
+        { "type": "indent", "text": "    " },
+        { "type": "key", "text": "\"role\"" },
         { "type": "plain", "text": ": " },
         { "type": "string", "text": "\"Full Stack Engineer\"" },
         { "type": "plain", "text": "," }
       ],
       [
-        { "type": "indent", "text": "  " },
-        { "type": "key", "text": "focus" },
+        { "type": "indent", "text": "    " },
+        { "type": "key", "text": "\"focus\"" },
         { "type": "plain", "text": ": " },
         { "type": "string", "text": "\"Web Apps + AI + Cloud\"" },
         { "type": "plain", "text": "," }
       ],
       [
-        { "type": "indent", "text": "  " },
-        { "type": "key", "text": "location" },
+        { "type": "indent", "text": "    " },
+        { "type": "key", "text": "\"location\"" },
         { "type": "plain", "text": ": " },
         { "type": "string", "text": "\"Bhubaneswar, Odisha\"" },
         { "type": "plain", "text": "," }
       ],
       [
-        { "type": "indent", "text": "  " },
-        { "type": "key", "text": "mindset" },
+        { "type": "indent", "text": "    " },
+        { "type": "key", "text": "\"mindset\"" },
         { "type": "plain", "text": ": " },
         { "type": "string", "text": "\"Ship reliable systems\"" },
         { "type": "plain", "text": "," }
       ],
-      [{ "type": "plain", "text": "};" }]
+      [{ "type": "plain", "text": "}" }]
     ]
   }
 }
