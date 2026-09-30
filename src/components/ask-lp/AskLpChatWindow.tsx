@@ -279,16 +279,18 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
                 </div>
               ) : null}
 
-              {messages.map((m) => (
-                <ChatMessage
-                  key={m.id}
-                  message={m}
-                  onFollowUp={(q) => {
-                    track("followup");
-                    void send(q);
-                  }}
-                />
-              ))}
+              {messages.map((m) =>
+                m.role === "assistant" && m.streaming && !m.content.trim() ? null : (
+                  <ChatMessage
+                    key={m.id}
+                    message={m}
+                    onFollowUp={(q) => {
+                      track("followup");
+                      void send(q);
+                    }}
+                  />
+                )
+              )}
 
               {sending && messages[messages.length - 1]?.content === "" ? (
                 <div
