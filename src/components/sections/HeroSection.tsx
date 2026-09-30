@@ -16,7 +16,7 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden pt-[6.25rem] md:pt-28 pb-10 md:pb-14"
     >
-      <Spotlight className="-top-40 left-0 md:left-40 md:-top-20" fill="#a78bfa" />
+      <Spotlight className="-top-40 left-0 md:left-40 md:-top-20 !w-full max-w-full" fill="#a78bfa" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_20%_20%,rgba(139,92,246,0.18),transparent_55%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_85%_30%,rgba(56,189,248,0.10),transparent_50%)]" />
 
