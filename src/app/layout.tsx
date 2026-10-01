@@ -28,6 +28,11 @@ const script = Caveat({
 export const metadata: Metadata = {
   title: site.brand.title,
   description: site.brand.description,
+  icons: {
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
