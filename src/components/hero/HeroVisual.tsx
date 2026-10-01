@@ -17,7 +17,7 @@ const tokenClass: Record<string, string> = {
 
 export function HeroVisual({ data }: HeroVisualProps) {
   return (
-    <div className="relative mx-auto w-full min-w-0 max-w-[440px] overflow-hidden lg:max-w-[480px] lg:overflow-visible">
+    <div className="relative mx-auto w-full min-w-0 max-w-[440px] overflow-hidden lg:max-w-[480px]">
       <div className="pointer-events-none absolute -inset-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.28),transparent_62%)] blur-2xl sm:-inset-10" />
 
       <div
@@ -36,7 +36,7 @@ export function HeroVisual({ data }: HeroVisualProps) {
         <span className="absolute right-[20%] top-[6%] h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_10px_rgba(125,211,252,0.9)]" />
       </div>
 
-      <p className="relative z-20 mb-3 text-right font-script text-xl leading-none text-[#c4b5fd] sm:absolute sm:-top-9 sm:right-1 sm:mb-0 sm:rotate-[7deg] sm:text-[1.35rem]">
+      <p className="relative z-20 mb-3 max-w-full text-right font-script text-xl leading-none text-[#c4b5fd] sm:text-[1.35rem]">
         {data.annotation}
       </p>
 
@@ -49,10 +49,10 @@ export function HeroVisual({ data }: HeroVisualProps) {
             {data.filename}
           </span>
         </div>
-        <pre className="max-w-full overflow-x-auto p-3 text-[11px] leading-[1.75] font-mono sm:p-6 sm:text-[13.5px] sm:leading-[1.85]">
+        <pre className="max-w-full overflow-x-auto p-3 text-[11px] leading-[1.7] font-mono sm:p-6 sm:text-[13.5px] sm:leading-[1.85]">
           <code>
             {data.lines.map((line, i) => (
-              <div key={i} className="whitespace-pre">
+              <div key={i} className="whitespace-pre-wrap break-words sm:whitespace-pre">
                 {line.map((part, j) => (
                   <span
                     key={`${i}-${j}`}
