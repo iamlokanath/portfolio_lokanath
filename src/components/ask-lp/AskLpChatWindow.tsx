@@ -229,27 +229,34 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
       {open ? (
         <>
           <motion.div
+            key="ask-lp-backdrop"
             className="fixed inset-0 z-[55] bg-black/50 backdrop-blur-[2px] md:hidden"
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={reduceMotion ? undefined : { opacity: 0 }}
+            transition={{ duration: reduceMotion ? 0 : 0.9, ease: "easeInOut" }}
             onClick={onClose}
             aria-hidden
           />
           <motion.div
+            key="ask-lp-panel"
             ref={panelRef}
             id="ask-lp-panel"
             role="dialog"
             aria-modal="true"
             aria-labelledby="ask-lp-title"
             data-panel={panelId}
-            initial={reduceMotion ? false : { opacity: 0, y: 24, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: 16, scale: 0.98 }}
+            initial={reduceMotion ? false : { opacity: 0.35, rotateX: 90 }}
+            animate={{ opacity: 1, rotateX: 0 }}
+            exit={reduceMotion ? undefined : { opacity: 0.35, rotateX: 90 }}
             transition={
-              reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 320, damping: 28 }
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 0.9, ease: [0.45, 0.05, 0.2, 1] }
             }
+            style={{ transformPerspective: 1200, transformOrigin: "bottom center" }}
             className={cn(
+              "md:origin-bottom-right",
               "fixed z-[60] flex flex-col overflow-hidden rounded-2xl",
               "border border-white/[0.1] bg-[#070b14]/95 backdrop-blur-2xl",
               "shadow-[0_24px_80px_rgba(0,0,0,0.55),0_0_40px_rgba(139,92,246,0.18)]",

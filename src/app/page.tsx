@@ -3,8 +3,8 @@ import AboutSection from "@/components/sections/AboutSection";
 import JourneySection from "@/components/sections/JourneySection";
 import FeaturedProjectsSection from "@/components/sections/FeaturedProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
-import AchievementsSection from "@/components/sections/AchievementsSection";
 import GitHubAnalyticsSection from "@/components/sections/GitHubAnalyticsSection";
+import LinkedInPostsSection from "@/components/sections/LinkedInPostsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import NameHoverSection from "@/components/sections/NameHoverSection";
 import { GlowArc } from "@/components/shared/GlowArc";
@@ -18,8 +18,8 @@ export default function Home() {
       <JourneySection />
       <FeaturedProjectsSection />
       <SkillsSection />
-      <AchievementsSection />
       <GitHubAnalyticsSection />
+      <LinkedInPostsSection />
       <ContactSection />
       <NameHoverSection />
     </main>
