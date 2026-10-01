@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import nav from "@/data/content/nav.json";
@@ -21,6 +22,7 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const lastY = useRef(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => {
@@ -126,28 +128,42 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        {open ? (
-          <div className="mt-2 rounded-2xl border border-white/[0.08] bg-[#0b1220]/95 backdrop-blur-xl p-3 lg:hidden">
-            {nav.links.map((link) => (
-              <Link
-                key={link.id}
-                href={link.href}
-                className="block rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={resumeHref()}
-              download
-              className="mt-2 flex h-10 w-full items-center justify-center gap-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-[var(--gradient-from)] to-[var(--gradient-to)]"
+        <AnimatePresence>
+          {open ? (
+            <motion.div
+              key="mobile-menu"
+              initial={reduceMotion ? false : { opacity: 0.35, rotateX: -90 }}
+              animate={{ opacity: 1, rotateX: 0 }}
+              exit={reduceMotion ? undefined : { opacity: 0.35, rotateX: -90 }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.9, ease: [0.45, 0.05, 0.2, 1] }
+              }
+              style={{ transformPerspective: 900, transformOrigin: "top center" }}
+              className="mt-2 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0b1220]/95 p-3 backdrop-blur-xl lg:hidden"
             >
-              <Download size={14} />
-              {nav.resumeCta.label}
-            </a>
-          </div>
-        ) : null}
+              {nav.links.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  className="block rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href={resumeHref()}
+                download
+                className="mt-2 flex h-10 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--gradient-from)] to-[var(--gradient-to)] text-sm font-medium text-white"
+              >
+                <Download size={14} />
+                {nav.resumeCta.label}
+              </a>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </div>
     </header>
   );

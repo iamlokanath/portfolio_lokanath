@@ -127,3 +127,46 @@ body {
     height: 0;
   }
 }
+
+@keyframes linkedin-slide-next {
+  from {
+    opacity: 0.45;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes linkedin-slide-prev {
+  from {
+    opacity: 0.45;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.linkedin-slide-next,
+.linkedin-slide-prev {
+  animation-duration: 280ms;
+  animation-timing-function: ease;
+}
+
+.linkedin-slide-next {
+  animation-name: linkedin-slide-next;
+}
+
+.linkedin-slide-prev {
+  animation-name: linkedin-slide-prev;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linkedin-slide-next,
+  .linkedin-slide-prev {
+    animation: none;
+  }
+}

@@ -122,7 +122,7 @@ function monthlyCounts(days: GithubDay[]): number[] {
     const key = day.date.slice(0, 7);
     buckets.set(key, (buckets.get(key) ?? 0) + day.count);
   }
-  return [...buckets.entries()]
+  return Array.from(buckets.entries())
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([, count]) => count);
 }
@@ -133,8 +133,8 @@ function languagesFrom(repos: Repo[]) {
     if (!repo.language || repo.fork) continue;
     totals.set(repo.language, (totals.get(repo.language) ?? 0) + Math.max(repo.size, 1));
   }
-  const sum = [...totals.values()].reduce((a, b) => a + b, 0) || 1;
-  return [...totals.entries()]
+  const sum = Array.from(totals.values()).reduce((a, b) => a + b, 0) || 1;
+  return Array.from(totals.entries())
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
     .map(([name, size]) => ({
