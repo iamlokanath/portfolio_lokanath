@@ -4,11 +4,6 @@
   "profileLabel": "View profile",
   "profileHrefEnvKey": "NEXT_PUBLIC_LINKEDIN_URL",
   "profileFallback": "https://www.linkedin.com/in/lokanath-panda-642193238/",
-  "author": {
-    "name": "Lokanath Panda",
-    "headline": "Officer - Python Developer at Cozentus",
-    "avatar": "/linkedin/avatar.jpg"
-  },
   "posts": [
     {
       "id": "software-engineering",
