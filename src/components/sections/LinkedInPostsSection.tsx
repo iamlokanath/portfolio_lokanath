@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { BadgeCheck, ChevronLeft, ChevronRight, Globe, Heart, PartyPopper, ThumbsUp } from "lucide-react";
 import { AppIcon } from "@/components/shared/AppIcon";
 import { Container } from "@/components/shared/Container";
@@ -10,6 +10,12 @@ import { envOr } from "@/lib/env-public";
 const VISIBLE = 3;
 
 type Post = (typeof linkedin.posts)[number];
+
+type LinkedInAuthor = {
+  name: string;
+  headline: string;
+  avatar: string;
+};
 
 function relativeTime(value: string) {
   const then = new Date(`${value}T00:00:00`).getTime();
@@ -34,8 +40,7 @@ const clamp = (lines: number): CSSProperties => ({
   overflow: "hidden",
 });
 
-function PostCard({ post }: { post: Post }) {
-  const { author } = linkedin;
+function PostCard({ post, author }: { post: Post; author: LinkedInAuthor | null }) {
   const image = "image" in post ? post.image : undefined;
   const preview = post.text.replace(/\s+/g, " ").trim();
 
@@ -47,13 +52,25 @@ function PostCard({ post }: { post: Post }) {
       className="group flex h-[26rem] w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0e1628] transition-colors hover:border-sky-400/30"
     >
       <div className="flex shrink-0 items-start gap-3 px-4 pt-4">
-        <img src={author.avatar} alt="" className="h-11 w-11 shrink-0 rounded-full object-cover" />
+        {author ? (
+          <img src={author.avatar} alt="" className="h-11 w-11 shrink-0 rounded-full object-cover" />
+        ) : (
+          <span className="h-11 w-11 shrink-0 animate-pulse rounded-full bg-white/10" />
+        )}
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5">
-            <p className="truncate text-sm font-semibold text-white">{author.name}</p>
+            {author ? (
+              <p className="truncate text-sm font-semibold text-white">{author.name}</p>
+            ) : (
+              <span className="h-3.5 w-28 animate-pulse rounded bg-white/10" />
+            )}
             <BadgeCheck size={15} className="shrink-0 text-sky-400" aria-hidden />
           </div>
-          <p className="truncate text-xs text-slate-400">{author.headline}</p>
+          {author ? (
+            <p className="truncate text-xs text-slate-400">{author.headline}</p>
+          ) : (
+            <span className="mt-1.5 block h-3 w-40 animate-pulse rounded bg-white/10" />
+          )}
           <p className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-slate-500">
             <time dateTime={post.date}>{relativeTime(post.date)}</time>
             <span aria-hidden>·</span>
@@ -122,6 +139,20 @@ export default function LinkedInPostsSection() {
   const [start, setStart] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const [moved, setMoved] = useState(false);
+  const [author, setAuthor] = useState<LinkedInAuthor | null>(null);
+
+  useEffect(() => {
+    let cancel = false;
+    fetch("/api/linkedin-profile")
+      .then(async (res) => {
+        const json = (await res.json()) as LinkedInAuthor & { error?: string };
+        if (!cancel && res.ok && json.name && json.avatar) setAuthor(json);
+      })
+      .catch(() => undefined);
+    return () => {
+      cancel = true;
+    };
+  }, []);
 
   const visible = Array.from({ length: Math.min(VISIBLE, posts.length) }, (_, offset) => {
     return posts[(start + offset) % posts.length];
@@ -177,7 +208,7 @@ export default function LinkedInPostsSection() {
         >
           {visible.map((post, index) => (
             <div key={post.id} className={index === 0 ? "flex h-full min-w-0 w-full" : "hidden h-full min-w-0 w-full lg:flex"}>
-              <PostCard post={post} />
+              <PostCard post={post} author={author} />
             </div>
           ))}
         </div>

@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { profileKnowledge } from "@/data/profile-knowledge";
 import ChatHeader from "./ChatHeader";
@@ -45,7 +46,48 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
   const [error, setError] = useState<string | null>(null);
   const [jdMode, setJdMode] = useState(false);
   const [showCta, setShowCta] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
+
+  const spokenAnswer = [...messages]
+    .reverse()
+    .find((message) => message.role === "assistant" && !message.streaming);
+  const spokenText = spokenAnswer
+    ? stripFollowups(spokenAnswer.content).body
+        .replace(/```[\s\S]*?```/g, " ")
+        .replace(/[#>*_`[\]]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+    : "";
+
+  useEffect(() => {
+    if (open) return;
+    window.speechSynthesis?.cancel();
+    setPlaying(false);
+  }, [open]);
+
+  useEffect(() => {
+    return () => {
+      window.speechSynthesis?.cancel();
+    };
+  }, []);
+
+  const toggleListen = () => {
+    if (typeof window === "undefined" || !window.speechSynthesis || !spokenText) return;
+    if (playing) {
+      window.speechSynthesis.cancel();
+      setPlaying(false);
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(spokenText);
+    utterance.lang = "en-US";
+    utterance.rate = 1;
+    utterance.onend = () => setPlaying(false);
+    utterance.onerror = () => setPlaying(false);
+    setPlaying(true);
+    window.speechSynthesis.speak(utterance);
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -315,6 +357,18 @@ export default function AskLpChatWindow({ open, onClose, onMinimize }: AskLpChat
 
               {showCta && !sending ? (
                 <ContactCtaRow onTrack={(id) => track(`cta_${id}`)} />
+              ) : null}
+
+              {spokenText ? (
+                <button
+                  type="button"
+                  onClick={toggleListen}
+                  aria-label={playing ? "Stop answer" : "Listen to answer"}
+                  aria-pressed={playing}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-300 transition-colors hover:text-white"
+                >
+                  {playing ? <VolumeX size={22} /> : <Volume2 size={22} />}
+                </button>
               ) : null}
             </div>
 
