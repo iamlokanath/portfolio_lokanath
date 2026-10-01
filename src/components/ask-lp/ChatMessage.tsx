@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Pause, Play } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
 import ProjectEvidenceCard, { findMentionedProjects } from "./ProjectEvidenceCard";
@@ -38,14 +36,6 @@ export function stripFollowups(raw: string): { body: string; followUps: string[]
   return { body, followUps };
 }
 
-function toSpokenText(text: string) {
-  return text
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/[#>*_`[\]]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 export default function ChatMessage({ message, onFollowUp }: ChatMessageProps) {
   const isUser = message.role === "user";
   const display = isUser ? message.content : stripFollowups(message.content).body;
@@ -56,32 +46,6 @@ export default function ChatMessage({ message, onFollowUp }: ChatMessageProps) {
       : [];
   const projects =
     !isUser && !message.streaming ? findMentionedProjects(display) : [];
-  const [playing, setPlaying] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      if (playing) window.speechSynthesis?.cancel();
-    };
-  }, [playing]);
-
-  const togglePlay = () => {
-    if (typeof window === "undefined" || !window.speechSynthesis) return;
-    if (playing) {
-      window.speechSynthesis.cancel();
-      setPlaying(false);
-      return;
-    }
-    const spoken = toSpokenText(display);
-    if (!spoken) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(spoken);
-    utterance.lang = "en-US";
-    utterance.rate = 1;
-    utterance.onend = () => setPlaying(false);
-    utterance.onerror = () => setPlaying(false);
-    setPlaying(true);
-    window.speechSynthesis.speak(utterance);
-  };
 
   return (
     <div className={cn("flex flex-col gap-1", isUser ? "items-end" : "items-start")}>
@@ -114,18 +78,6 @@ export default function ChatMessage({ message, onFollowUp }: ChatMessageProps) {
           <span className="inline-block mt-1 h-1.5 w-1.5 rounded-full bg-violet-300 animate-pulse" aria-hidden />
         ) : null}
       </div>
-
-      {!isUser && !message.streaming && display.trim() ? (
-        <button
-          type="button"
-          onClick={togglePlay}
-          aria-label={playing ? "Stop answer" : "Play answer"}
-          className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-slate-300 hover:border-violet-400/40 hover:text-white"
-        >
-          {playing ? <Pause size={12} /> : <Play size={12} />}
-          {playing ? "Stop" : "Listen"}
-        </button>
-      ) : null}
 
       {!isUser && !message.streaming && message.jdAnalysis && message.jdMatch ? (
         <div className="w-full max-w-[92%]">
