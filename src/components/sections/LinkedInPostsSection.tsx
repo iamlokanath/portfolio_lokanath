@@ -4,30 +4,26 @@ import { useEffect, useState, type CSSProperties } from "react";
 import { BadgeCheck, ChevronLeft, ChevronRight, Globe, Heart, PartyPopper, ThumbsUp } from "lucide-react";
 import { AppIcon } from "@/components/shared/AppIcon";
 import { Container } from "@/components/shared/Container";
-import linkedin from "@/data/content/linkedin.json";
-import { envOr } from "@/lib/env-public";
 
 const VISIBLE = 3;
+const PROFILE_FALLBACK = "https://www.linkedin.com/in/lokanath-panda-642193238/";
 
-type Post = (typeof linkedin.posts)[number];
+type LinkedInPost = {
+  id: string;
+  url: string;
+  text: string;
+  time: string;
+  image?: string;
+  reactions: number;
+  comments: number;
+};
 
 type LinkedInAuthor = {
   name: string;
   headline: string;
   avatar: string;
+  url: string;
 };
-
-function relativeTime(value: string) {
-  const then = new Date(`${value}T00:00:00`).getTime();
-  const days = Math.max(0, Math.floor((Date.now() - then) / 86_400_000));
-  if (days < 1) return "1d";
-  if (days < 7) return `${days}d`;
-  const weeks = Math.floor(days / 7);
-  if (weeks < 5) return `${weeks}w`;
-  const months = Math.floor(days / 30);
-  if (months < 12) return `${months}mo`;
-  return `${Math.floor(days / 365)}y`;
-}
 
 function commentLabel(count: number) {
   return `${count} comment${count === 1 ? "" : "s"}`;
@@ -40,8 +36,7 @@ const clamp = (lines: number): CSSProperties => ({
   overflow: "hidden",
 });
 
-function PostCard({ post, author }: { post: Post; author: LinkedInAuthor | null }) {
-  const image = "image" in post ? post.image : undefined;
+function PostCard({ post, author }: { post: LinkedInPost; author: LinkedInAuthor | null }) {
   const preview = post.text.replace(/\s+/g, " ").trim();
 
   return (
@@ -71,30 +66,24 @@ function PostCard({ post, author }: { post: Post; author: LinkedInAuthor | null 
           ) : (
             <span className="mt-1.5 block h-3 w-40 animate-pulse rounded bg-white/10" />
           )}
-          <p className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-slate-500">
-            <time dateTime={post.date}>{relativeTime(post.date)}</time>
-            <span aria-hidden>·</span>
-            <Globe size={11} />
-          </p>
+          {post.time ? (
+            <p className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-slate-500">
+              <span>{post.time}</span>
+              <span aria-hidden>·</span>
+              <Globe size={11} />
+            </p>
+          ) : null}
         </div>
       </div>
 
-      {image ? (
+      {post.image ? (
         <>
-          <p
-            className="mt-3 h-[4.5rem] shrink-0 overflow-hidden px-4 text-sm leading-6 text-slate-100"
-            style={clamp(3)}
-          >
+          <p className="mt-3 h-[4.5rem] shrink-0 overflow-hidden px-4 text-sm leading-6 text-slate-100" style={clamp(3)}>
             {preview}
             <span className="text-slate-400"> ... more</span>
           </p>
-          <div className={`relative min-h-0 flex-1 overflow-hidden ${"imageFit" in post && post.imageFit === "contain" ? "bg-white" : "bg-black"}`}>
-            <img src={image} alt="" className="absolute inset-0 h-full w-full object-contain" />
-            {"imageCount" in post && post.imageCount && post.imageCount > 1 ? (
-              <span className="absolute right-3 top-3 rounded-full bg-black/75 px-2 py-0.5 text-[11px] font-medium text-white">
-                1/{post.imageCount}
-              </span>
-            ) : null}
+          <div className="relative min-h-0 flex-1 overflow-hidden bg-black">
+            <img src={post.image} alt="" className="absolute inset-0 h-full w-full object-contain" />
           </div>
         </>
       ) : (
@@ -107,7 +96,7 @@ function PostCard({ post, author }: { post: Post; author: LinkedInAuthor | null 
       )}
 
       <div className="mt-auto flex h-12 shrink-0 items-center justify-between gap-3 border-t border-white/[0.06] px-4 text-[12px] text-slate-400">
-        {"reactions" in post && post.reactions ? (
+        {post.reactions > 0 ? (
           <span className="inline-flex min-w-0 items-center gap-2">
             <span className="inline-flex shrink-0 -space-x-1">
               <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-sky-500 text-white">
@@ -120,45 +109,59 @@ function PostCard({ post, author }: { post: Post; author: LinkedInAuthor | null 
                 <Heart size={9} />
               </span>
             </span>
-            <span className="truncate">{post.reactions}</span>
+            <span className="truncate">{new Intl.NumberFormat("en-US").format(post.reactions)}</span>
           </span>
         ) : (
           <span />
         )}
-        {"comments" in post && typeof post.comments === "number" ? (
-          <span className="shrink-0">{commentLabel(post.comments)}</span>
-        ) : null}
+        {post.comments > 0 ? <span className="shrink-0">{commentLabel(post.comments)}</span> : null}
       </div>
     </a>
   );
 }
 
 export default function LinkedInPostsSection() {
-  const profileHref = envOr(linkedin.profileHrefEnvKey, linkedin.profileFallback);
-  const posts = linkedin.posts;
   const [start, setStart] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const [moved, setMoved] = useState(false);
   const [author, setAuthor] = useState<LinkedInAuthor | null>(null);
+  const [posts, setPosts] = useState<LinkedInPost[]>([]);
+  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
 
   useEffect(() => {
     let cancel = false;
     fetch("/api/linkedin-profile")
       .then(async (res) => {
-        const json = (await res.json()) as LinkedInAuthor & { error?: string };
-        if (!cancel && res.ok && json.name && json.avatar) setAuthor(json);
+        const json = (await res.json()) as LinkedInAuthor & {
+          error?: string;
+          posts?: LinkedInPost[];
+        };
+        if (cancel || !res.ok) {
+          if (!cancel) setStatus("error");
+          return;
+        }
+        if (json.name && json.avatar) {
+          setAuthor({ name: json.name, headline: json.headline, avatar: json.avatar, url: json.url });
+        }
+        setPosts(Array.isArray(json.posts) ? json.posts : []);
+        setStatus("ready");
       })
-      .catch(() => undefined);
+      .catch(() => {
+        if (!cancel) setStatus("error");
+      });
     return () => {
       cancel = true;
     };
   }, []);
 
+  const profileHref =
+    author?.url || process.env.NEXT_PUBLIC_LINKEDIN_URL || PROFILE_FALLBACK;
   const visible = Array.from({ length: Math.min(VISIBLE, posts.length) }, (_, offset) => {
     return posts[(start + offset) % posts.length];
   });
 
   const move = (step: 1 | -1) => {
+    if (posts.length < 2) return;
     setDirection(step);
     setMoved(true);
     setStart((current) => (current + step + posts.length) % posts.length);
@@ -168,50 +171,77 @@ export default function LinkedInPostsSection() {
     <section id="linkedin" className="section-pad min-w-0 overflow-x-hidden">
       <Container className="max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">{linkedin.heading}</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">LinkedIn</h2>
           <div className="flex shrink-0 items-center gap-2">
-            <button
-              type="button"
-              onClick={() => move(-1)}
-              aria-label="Show previous posts"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#0b1220]/75 text-white transition-colors hover:border-sky-400/40 hover:text-sky-200"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              type="button"
-              onClick={() => move(1)}
-              aria-label="Show next posts"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#0b1220]/75 text-white transition-colors hover:border-sky-400/40 hover:text-sky-200"
-            >
-              <ChevronRight size={18} />
-            </button>
+            {posts.length > 1 ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() => move(-1)}
+                  aria-label="Show previous posts"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#0b1220]/75 text-white transition-colors hover:border-sky-400/40 hover:text-sky-200"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => move(1)}
+                  aria-label="Show next posts"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#0b1220]/75 text-white transition-colors hover:border-sky-400/40 hover:text-sky-200"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </>
+            ) : null}
             <a
               href={profileHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={linkedin.profileLabel}
+              aria-label="View profile"
               className="ml-1 inline-flex h-9 items-center gap-2 rounded-full border border-white/15 px-4 text-[13px] text-white transition-colors hover:bg-white/[0.04]"
             >
               <AppIcon name="linkedin" size={14} className="text-sky-300" />
-              <span className="hidden sm:inline">{linkedin.profileLabel}</span>
+              <span className="hidden sm:inline">View profile</span>
             </a>
           </div>
         </div>
-        <p className="mt-3 max-w-2xl text-sm text-slate-400 sm:text-base">{linkedin.description}</p>
+        <p className="mt-3 max-w-2xl text-sm text-slate-400 sm:text-base">Recent posts from my profile.</p>
 
-        <div
-          key={`${start}-${direction}`}
-          className={`mt-8 grid min-w-0 grid-cols-1 items-stretch gap-4 lg:grid-cols-3 ${
-            moved ? (direction > 0 ? "linkedin-slide-next" : "linkedin-slide-prev") : ""
-          }`}
-        >
-          {visible.map((post, index) => (
-            <div key={post.id} className={index === 0 ? "flex h-full min-w-0 w-full" : "hidden h-full min-w-0 w-full lg:flex"}>
-              <PostCard post={post} author={author} />
-            </div>
-          ))}
-        </div>
+        {status === "loading" ? (
+          <div className="mt-8 grid min-w-0 grid-cols-1 items-stretch gap-4 lg:grid-cols-3">
+            {Array.from({ length: VISIBLE }, (_, index) => (
+              <div
+                key={index}
+                className={`h-[26rem] animate-pulse rounded-2xl border border-white/[0.08] bg-white/[0.04] ${
+                  index === 0 ? "" : "hidden lg:block"
+                }`}
+              />
+            ))}
+          </div>
+        ) : null}
+
+        {status === "error" ? (
+          <p className="mt-8 text-sm text-slate-400">LinkedIn posts could not be loaded right now.</p>
+        ) : null}
+
+        {status === "ready" && posts.length === 0 ? (
+          <p className="mt-8 text-sm text-slate-400">No public posts on this profile yet.</p>
+        ) : null}
+
+        {status === "ready" && posts.length > 0 ? (
+          <div
+            key={`${start}-${direction}`}
+            className={`mt-8 grid min-w-0 grid-cols-1 items-stretch gap-4 lg:grid-cols-3 ${
+              moved ? (direction > 0 ? "linkedin-slide-next" : "linkedin-slide-prev") : ""
+            }`}
+          >
+            {visible.map((post, index) => (
+              <div key={post.id} className={index === 0 ? "flex h-full min-w-0 w-full" : "hidden h-full min-w-0 w-full lg:flex"}>
+                <PostCard post={post} author={author} />
+              </div>
+            ))}
+          </div>
+        ) : null}
       </Container>
     </section>
   );
